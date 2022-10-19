@@ -5,6 +5,7 @@ import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Button } from './Button/Button';
 import { Loader } from './Loader/Loader';
+import { Container } from './App.styled';
 
 export class App extends Component {
   state = {
@@ -71,13 +72,13 @@ export class App extends Component {
     const { gallery, page, totalHits, isLoading, error } = this.state;
 
     return (
-      <>
+      <Container>
         <Searchbar onSubmit={onSubmit} />
         <ImageGallery gallery={gallery} />
         {isLoading && <Loader />}
         {error && <h2>{error}</h2>}
         {totalHits && page < getTotalPages() && <Button onClick={loadMore} />}
-      </>
+      </Container>
     );
   }
 }

@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
+import { GalleryList } from './ImageGallery.styled';
 
 export const ImageGallery = ({ gallery }) => {
   return (
-    <ul className="gallery">
+    <GalleryList className="gallery">
       {gallery.map(galleryItem => (
         <ImageGalleryItem
           key={galleryItem.id}
@@ -12,7 +13,7 @@ export const ImageGallery = ({ gallery }) => {
           alt={galleryItem.tags}
         />
       ))}
-    </ul>
+    </GalleryList>
   );
 };
 

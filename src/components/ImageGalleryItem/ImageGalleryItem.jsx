@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Modal } from 'components/Modal/Modal';
+import { GallaryItem, GallaryImg } from './ImageGalleryItem.styled';
 
 export class ImageGalleryItem extends Component {
   state = {
@@ -24,9 +25,9 @@ export class ImageGalleryItem extends Component {
 
     return (
       <>
-        <li className="gallery-item">
-          <img src={img} alt={alt} width="260px" onClick={openModal} />
-        </li>
+        <GallaryItem className="gallery-item">
+          <GallaryImg src={img} alt={alt} onClick={openModal} />
+        </GallaryItem>
 
         {currentImage && <Modal img={largeImg} alt={alt} closeModal={closeModal} />}
       </>
